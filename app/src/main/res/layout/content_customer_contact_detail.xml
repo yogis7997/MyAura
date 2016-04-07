@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:showIn="@layout/customer_contact_detail">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="200"
+            android:hint="@string/street_address" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <Spinner
+                android:id="@+id/spinner_city"
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:prompt="@string/city" />
+
+            <Spinner
+                android:id="@+id/spinner_state"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.4"
+                android:prompt="@string/state" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <LinearLayout
+
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="0.6"
+                android:background="@color/colorControlNormal" />
+
+            <LinearLayout
+
+
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:background="@color/colorControlNormal"
+                android:layout_weight="0.4" />
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:inputType="phone"
+            android:maxLength="15"
+            android:hint="@string/phone_number" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_create"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"
+        android:background="@color/button_color"
+        android:text="@string/create_account"
+        android:textColor="@android:color/white" />
+</RelativeLayout>

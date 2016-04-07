@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#5126ab</color>
+    <color name="colorPrimaryDark">#5126ab</color>
+    <color name="colorAccent">#FFFFFF</color>
+    <color name="hint_color">#7a59bf</color>
+    <color name="button_color">#6b35dc</color>
+    <color name="button_fb_color">#3d67c6</color>
+    <color name="colorControlNormal">#e0e0e0</color>
+    <color name="text_color">#787878</color>
+</resources>
