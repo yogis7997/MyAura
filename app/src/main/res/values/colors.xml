@@ -8,4 +8,5 @@
     <color name="button_fb_color">#3d67c6</color>
     <color name="colorControlNormal">#e0e0e0</color>
     <color name="text_color">#787878</color>
+    <color name="tab_indicator">#f7402d</color>
 </resources>
