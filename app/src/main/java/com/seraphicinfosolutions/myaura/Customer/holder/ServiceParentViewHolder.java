@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.os.Build;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
@@ -11,18 +12,17 @@ import com.bignerdranch.expandablerecyclerview.ViewHolder.ParentViewHolder;
 import com.seraphicinfosolutions.myaura.R;
 
 
-public class ServiceParentViewHolder extends ParentViewHolder{
+public class ServiceParentViewHolder extends ParentViewHolder {
     private static final float INITIAL_POSITION = 0.0f;
     private static final float ROTATED_POSITION = 180f;
     private static final boolean HONEYCOMB_AND_ABOVE = Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB;
+    private RelativeLayout rl_main;
 
-    public TextView mCrimeTitleTextView;
-    public ImageButton mParentDropDownArrow;
 
     public ServiceParentViewHolder(View itemView) {
         super(itemView);
-        mCrimeTitleTextView = (TextView) itemView.findViewById(R.id.parent_list_item_crime_title_text_view);
-        mParentDropDownArrow = (ImageButton) itemView.findViewById(R.id.parent_list_item_expand_arrow);
+        rl_main = (RelativeLayout) itemView.findViewById(R.id.rl_main);
+
     }
 
     @SuppressLint("NewApi")
@@ -34,9 +34,9 @@ public class ServiceParentViewHolder extends ParentViewHolder{
         }
 
         if (expanded) {
-            mParentDropDownArrow.setRotation(ROTATED_POSITION);
+            rl_main.setVisibility(View.VISIBLE);
         } else {
-            mParentDropDownArrow.setRotation(INITIAL_POSITION);
+            rl_main.setVisibility(View.GONE);
         }
     }
 }

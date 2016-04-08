@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import com.bignerdranch.expandablerecyclerview.Adapter.ExpandableRecyclerAdapter;
 import com.bignerdranch.expandablerecyclerview.Model.ParentListItem;
 
+import com.seraphicinfosolutions.myaura.Customer.fragments.ServiceFragment;
 import com.seraphicinfosolutions.myaura.Customer.holder.ServiceChildViewHolder;
 import com.seraphicinfosolutions.myaura.Customer.holder.ServiceParentViewHolder;
 import com.seraphicinfosolutions.myaura.R;
@@ -41,9 +42,13 @@ public class ServiceAdapter extends ExpandableRecyclerAdapter<ServiceParentViewH
     }
 
 
-
     @Override
-    public void onBindChildViewHolder(ServiceChildViewHolder serviceChildViewHolder, int i, Object o) {
-
+    public void onBindChildViewHolder(ServiceChildViewHolder serviceChildViewHolder, final int i, Object o) {
+        serviceChildViewHolder.tv_showless.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ServiceFragment.update(i-1);
+            }
+        });
     }
 }

@@ -139,4 +139,12 @@
     <string name="share">Share</string>
     <string name="about">About</string>
     <string name="switch_business">SWITCH TO BUSINESS</string>
+    <string name="request_quotoe">Request Quotoe</string>
+    <string name="business_name">Business Name</string>
+    <string name="view_detail">View Detail</string>
+    <string name="available_now">Available Now</string>
+    <string name="desc">A hedge fund uses a range of investment techniques and invests in a wide array of assets to generate a higher return for a given level of risk than what\'s expected of normal investments. In many cases, hedge funds are managed to generate a consistent level of return, regardless of what the market does.</string>
+    <string name="work_images">Work Images</string>
+    <string name="select">select</string>
+    <string name="show_less">show less</string>
 </resources>

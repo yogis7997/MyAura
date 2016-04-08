@@ -9,4 +9,7 @@
     <color name="colorControlNormal">#e0e0e0</color>
     <color name="text_color">#787878</color>
     <color name="tab_indicator">#f7402d</color>
+    <color name="gray">#a6a6a6</color>
+    <color name="yellow">#ffcc00</color>
+    <color name="green">#5db95f</color>
 </resources>

@@ -23,6 +23,7 @@ public class ServiceFragment extends android.support.v4.app.Fragment {
     private RecyclerView recyclerView_service;
     private View view;
     private Bundle savedInStanceState;
+    private static ServiceAdapter crimeExpandableAdapter;
 
     @Nullable
     @Override
@@ -38,7 +39,7 @@ public class ServiceFragment extends android.support.v4.app.Fragment {
         recyclerView_service = (RecyclerView) view.findViewById(R.id.crime_recycler_view);
         recyclerView_service.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        ServiceAdapter crimeExpandableAdapter = new ServiceAdapter(getActivity(), generateCrimes());
+         crimeExpandableAdapter = new ServiceAdapter(getActivity(), generateCrimes());
         crimeExpandableAdapter.onRestoreInstanceState(savedInStanceState);
 
         recyclerView_service.setAdapter(crimeExpandableAdapter);
@@ -63,5 +64,14 @@ public class ServiceFragment extends android.support.v4.app.Fragment {
             parentListItems.add(crime);
         }
         return parentListItems;
+    }
+
+
+    public static void update(int pos) {
+
+
+        crimeExpandableAdapter.collapseParent(pos);
+        crimeExpandableAdapter.notifyItemChanged(pos);
+
     }
 }
