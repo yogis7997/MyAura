@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:padding="10dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.seraphicinfosolutions.myaura.SignUpProfileActivity"
+    tools:context="com.seraphicinfosolutions.myaura.Customer.CustomerProfile"
     tools:showIn="@layout/activity_sign_up_profile">
 
 <LinearLayout

@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.seraphicinfosolutions.myaura.Customer.fragments.FindAService;
+import com.seraphicinfosolutions.myaura.Customer.fragments.RequestedQuote;
 import com.seraphicinfosolutions.myaura.R;
 
 public class HomeActivity extends AppCompatActivity
@@ -27,7 +28,7 @@ public class HomeActivity extends AppCompatActivity
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        getSupportActionBar().setTitle(R.string.find_services);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,9 +90,13 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_findservices) {
-            // Handle the camera action
+            getSupportActionBar().setTitle(R.string.find_services);
+            FindAService findAService = new FindAService();
+            changeFragment(findAService);
         } else if (id == R.id.nav_requested) {
-
+            getSupportActionBar().setTitle(R.string.requested_quotoes);
+            RequestedQuote requestedQuote = new RequestedQuote();
+            changeFragment(requestedQuote);
         } else if (id == R.id.nav_trackservice) {
 
         } else if (id == R.id.nav_promocode) {
