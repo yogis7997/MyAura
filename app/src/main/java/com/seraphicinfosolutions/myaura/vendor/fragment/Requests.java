@@ -1,4 +1,4 @@
-package com.seraphicinfosolutions.myaura.Customer.fragments;
+package com.seraphicinfosolutions.myaura.vendor.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -20,10 +20,7 @@ import com.seraphicinfosolutions.myaura.R;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by seraphicinfosolutions on 4/13/16.
- */
-public class RequestedQuote extends Fragment {
+public class Requests extends Fragment {
     private RecyclerView recyclerView_service;
     private View view;
     private Bundle savedInStanceState;
@@ -74,13 +71,9 @@ public class RequestedQuote extends Fragment {
 
     public static void update(int pos) {
 
-        try {
-            crimeExpandableAdapter.collapseParent(pos);
-            crimeExpandableAdapter.notifyItemChanged(pos);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
+        crimeExpandableAdapter.collapseParent(pos);
+        crimeExpandableAdapter.notifyItemChanged(pos);
 
     }
 }

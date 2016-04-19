@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
+    android:fillViewport="true"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.seraphicinfosolutions.myaura.Customer.CustomerMainProfile"
-    tools:showIn="@layout/activity_sign_up_profile">
+    tools:context="com.seraphicinfosolutions.myaura.vendor.AddEmployee">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,41 +19,69 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:hint="@string/name"
-            android:clickable="false"
-            android:focusable="false"
 
-            android:text="Tiffeny" />
+            android:hint="@string/employee_name"
+
+            />
 
         <EditText
             android:id="@+id/ed_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:hint="@string/email"
-            android:focusable="false"
-            android:text="tiffany@gmail.com"
-            android:inputType="textEmailAddress" />
+            android:hint="@string/employee_id" />
+
+        <EditText
+            android:id="@+id/ed_emailadd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/email_address"
+            android:inputType="textEmailAddress"
+
+            />
+
+        <EditText
+            android:id="@+id/ed_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+
+            android:hint="@string/mobile_number"
+
+            android:inputType="phone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/description" />
 
         <EditText
             android:id="@+id/ed_pass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:hint="@string/prompt_password"
-            android:text="aaaaaaaa"
-            android:focusable="false"
-            android:inputType="textPassword" />
+            android:hint="@string/desc_hint" />
 
-        <EditText
-            android:id="@+id/ed_confirmpass"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:hint="@string/confirm_password"
-            android:text="aaaaaaaa"
-            android:focusable="false"
-            android:inputType="textPassword" />
+            android:gravity="right"
+            android:hint="110/120"></TextView>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/work_images" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_work"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"></android.support.v7.widget.RecyclerView>
+
 
         <Button
             android:id="@+id/btn_next"
@@ -61,7 +89,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:background="@color/button_color"
-            android:text="@string/next"
+            android:text="@string/add"
             android:textColor="@android:color/white" />
     </LinearLayout>
 

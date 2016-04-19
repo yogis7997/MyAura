@@ -1,5 +1,6 @@
 package com.seraphicinfosolutions.myaura.Customer;
 
+import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,15 +13,20 @@ import android.view.View;
 import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.seraphicinfosolutions.myaura.Customer.adapter.ImagesAdapter;
+import com.seraphicinfosolutions.myaura.Customer.fragments.RequestedQuote;
 import com.seraphicinfosolutions.myaura.R;
+import com.seraphicinfosolutions.myaura.Utils.Utility;
 
-/**
- * Created by seraphicinfosolutions on 4/12/16.
- */
+import org.w3c.dom.Text;
+
+import java.util.Calendar;
+
 public class RequestQuoute extends AppCompatActivity implements View.OnClickListener {
 
     private Toolbar toolbar;
@@ -30,13 +36,23 @@ public class RequestQuoute extends AppCompatActivity implements View.OnClickList
     private String arr1[] = {"Request 1", "Request 2"};
     private Dialog dialog;
     private Button btn_sameday, btn_request;
+    private TextView tv_fromtime, tv_fromdate, tv_todate, tv_totime;
+    private Calendar myCalendar;
+    private Utility utility;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_request_quote);
+        initObjects();
         setToolBar();
         initUI();
+
+
+    }
+
+    private void initObjects() {
+        utility = new Utility(this);
     }
 
     private void setToolBar() {
@@ -52,6 +68,14 @@ public class RequestQuoute extends AppCompatActivity implements View.OnClickList
         sp_request = (Spinner) findViewById(R.id.sp_request);
         btn_request = (Button) findViewById(R.id.btn_request);
         btn_sameday = (Button) findViewById(R.id.btn_sameday);
+        tv_fromdate = (TextView) findViewById(R.id.tv_fromdate);
+        tv_fromtime = (TextView) findViewById(R.id.tv_fromtime);
+        tv_todate = (TextView) findViewById(R.id.tv_todate);
+        tv_totime = (TextView) findViewById(R.id.tv_totime);
+        tv_fromdate.setText(utility.getCurrentDate());
+        tv_todate.setText(utility.getCurrentDate());
+        tv_totime.setText(utility.getCurrentTime());
+        tv_fromtime.setText(utility.getCurrentTime());
         setListener();
         sp_request.setAdapter(new ArrayAdapter<String>(getApplicationContext(), R.layout.item_spinner, arr1));
         rv_images.setLayoutManager(layoutManager);
@@ -61,6 +85,10 @@ public class RequestQuoute extends AppCompatActivity implements View.OnClickList
     private void setListener() {
         btn_sameday.setOnClickListener(this);
         btn_request.setOnClickListener(this);
+        tv_totime.setOnClickListener(this);
+        tv_todate.setOnClickListener(this);
+        tv_fromtime.setOnClickListener(this);
+        tv_fromdate.setOnClickListener(this);
     }
 
 
@@ -72,7 +100,7 @@ public class RequestQuoute extends AppCompatActivity implements View.OnClickList
         dialog.setCancelable(false);
         dialog.setContentView(R.layout.dialog_confirmation);
         Button dialogButton = (Button) dialog.findViewById(R.id.btn_dialog);
-        ImageView img_cross = (ImageView)dialog.findViewById(R.id.img_cross);
+        ImageView img_cross = (ImageView) dialog.findViewById(R.id.img_cross);
         dialogButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,6 +125,18 @@ public class RequestQuoute extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        showDialog("");
+        if (v == btn_request) {
+            showDialog("");
+        } else if (v == tv_fromdate) {
+            utility.DateDialog(tv_fromdate);
+        } else if (v == tv_fromtime) {
+            utility.timeDialog(tv_fromtime);
+        } else if (v == tv_todate) {
+            utility.DateDialog(tv_todate);
+        } else if (v == tv_totime) {
+            utility.timeDialog(tv_totime);
+        }
     }
+
+
 }

@@ -22,6 +22,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.seraphicinfosolutions.myaura.R;
+import com.seraphicinfosolutions.myaura.Utils.Constants;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -58,8 +59,8 @@ public class CustomerLogin extends AppCompatActivity implements OnClickListener 
             }
         });
         mEmailSignInButton = (Button) findViewById(R.id.email_sign_up_button);
-        btn_business = (Button) findViewById(R.id.btn_customer);
-        btn_customer = (Button) findViewById(R.id.btn_business);
+        btn_business = (Button) findViewById(R.id.btn_business);
+        btn_customer = (Button) findViewById(R.id.btn_customer);
         btn_business.setOnClickListener(this);
         btn_customer.setOnClickListener(this);
         mEmailSignInButton.setOnClickListener(this);
@@ -165,11 +166,13 @@ public class CustomerLogin extends AppCompatActivity implements OnClickListener 
             });
 
 
-        }else if(v==btn_business){
-            Intent intent = new Intent(this,CustomerProfile.class);
+        } else if (v == btn_business) {
+            Intent intent = new Intent(this, CustomerProfile.class);
+            Constants.USERTYPE = 1;
             startActivity(intent);
-        }else if(v==btn_customer){
-            Intent intent = new Intent(this,CustomerProfile.class);
+        } else if (v == btn_customer) {
+            Intent intent = new Intent(this, CustomerProfile.class);
+            Constants.USERTYPE = 0;
             startActivity(intent);
         }
     }

@@ -39,7 +39,7 @@ public class ImagesAdapter extends RecyclerView.Adapter<HolderImages> {
 
     @Override
     public int getItemCount() {
-        return 10;
+        return 1;
     }
 
     public void showDialog(String msg) {

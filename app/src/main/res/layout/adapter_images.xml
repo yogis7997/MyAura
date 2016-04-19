@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.seraphicinfosolutions.myaura.Utils.SquareImageView xmlns:android="http://schemas.android.com/apk/res/android"
    android:layout_width="100dp"
-    android:src="@drawable/download"
+    android:src="@drawable/ic_add"
     android:id="@+id/imageview"
     android:layout_margin="2dp"
     android:scaleType="fitXY"

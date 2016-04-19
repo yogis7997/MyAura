@@ -23,23 +23,26 @@
         app:headerLayout="@layout/nav_header_home"
 
         app:itemBackground="@drawable/nav_item_background"
-        app:itemTextColor="@color/state_list"
-        app:menu="@menu/activity_home_drawer">
+        app:itemTextColor="@color/state_list">
 
-        <RelativeLayout
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="50dp"
+            android:layout_marginTop="@dimen/nav_header_height"></android.support.v7.widget.RecyclerView>
+
+        <Button
+            android:id="@+id/switch_to_business"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_gravity="bottom"
-            android:background="@android:color/holo_red_dark">
+            android:textColor="@android:color/white"
+            android:background="@android:color/holo_red_dark"
+            android:text="@string/switch_business">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/switch_business"
-                android:layout_centerInParent="true"
-                android:textAppearance="?android:textAppearanceMedium"
-                android:textColor="@android:color/white" />
-        </RelativeLayout>
+
+        </Button>
     </android.support.design.widget.NavigationView>
 
 </android.support.v4.widget.DrawerLayout>

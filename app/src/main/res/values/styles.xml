@@ -10,7 +10,7 @@
 
     </style>
 
-    <style name="Theme.MyActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="MyActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorAccent</item>
         <!--<item name="colorAccent">@color/colorPrimary</item>-->

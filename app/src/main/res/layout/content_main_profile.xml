@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.seraphicinfosolutions.myaura.Customer.CustomerProfile">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/about" />
+
+        <EditText
+            android:id="@+id/ed_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:hint="@string/name"
+            android:text="Tiffeny" />
+
+        <EditText
+            android:id="@+id/ed_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/email"
+            android:text="tiffany@gmail.com"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/ed_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:focusable="false"
+            android:text="adsdadsasdf"
+            android:focusableInTouchMode="false"
+            android:hint="@string/prompt_password"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/ed_confirmpass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:focusable="false"
+            android:text="adsdadsasdf"
+            android:focusableInTouchMode="false"
+            android:hint="@string/confirm_password"
+            android:inputType="textPassword" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text="@string/contact_detail" />
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:hint="@string/street_address"
+            android:maxLength="200" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <Spinner
+                android:id="@+id/spinner_city"
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:prompt="@string/city" />
+
+            <Spinner
+                android:id="@+id/spinner_state"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.4"
+                android:prompt="@string/state" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:orientation="horizontal"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:weightSum="1">
+
+            <LinearLayout
+
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="0.6"
+                android:background="@color/colorControlNormal" />
+
+            <LinearLayout
+
+
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.4"
+                android:background="@color/colorControlNormal" />
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/phone_number"
+            android:inputType="phone"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:maxLength="15" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_green"
+            android:text="@string/logout"
+            android:textColor="@color/colorPrimary" />
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

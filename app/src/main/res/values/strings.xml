@@ -165,4 +165,57 @@
     <string name="submit">Submit</string>
     <string name="vendor_behaviour">Vendor Behaviour</string>
     <string name="other">Other</string>
+    <string name="not_now">Not Now</string>
+    <string name="pending">Pending</string>
+    <string name="estimated_arrival">Estimated Arrival</string>
+    <string name="estimated_time">February 25th, 5 PM at 156 Sutter Street</string>
+    <string name="contact_detail">Contact Detail</string>
+    <string name="logout">Logout</string>
+    <string name="google_api_key">AIzaSyBO7rGsCgim2ZXjf6pS9k-OxiSx9NNoLI4</string>
+    <string name="cancel">Cancel</string>
+    <string name="call">Call</string>
+    <string name="text">Text</string>
+    <string name="enter_promo_code">Enter Promo Code</string>
+    <string name="apply">Apply</string>
+    <string name="invite_friends">Invite Friends</string>
+    <string name="refferal_code">Refferal Code</string>
+    <string name="business_email">Business Email</string>
+    <string name="employees">Employees</string>
+    <string name="allow_same_day_booking">Allow same day booking</string>
+    <string name="employee_name">Emloyee Name</string>
+    <string name="employee_id">Employee Id</string>
+    <string name="email_address">Email Address</string>
+    <string name="add">Add</string>
+    <string name="requests">Requests</string>
+    <string name="history">History</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="jobs_completed">Jobs Completed</string>
+    <string name="jobs_cancellations">Job Cancellations</string>
+    <string name="revenue_earned">Revenue Earned</string>
+    <string name="mybusiness">My Business</string>
+    <string name="add_employee">Add Employee</string>
+    <string name="profile">Profile</string>
+    <string name="switch_customer">Switch to customer</string>>
+    <array name="about">
+        <item>Like us on Facebook</item>
+        <item>Rate us on Google Play</item>
+        <item>Terms &amp; Condition</item>
+        <item>Privacy Policy</item>
+        <item>Version</item>
+    </array>
+
+    <array name="customer_navigation">
+        <item>@string/find_services</item>
+        <item>@string/requested_quotoes</item>
+        <item>@string/track_service</item>
+        <item>@string/promo_code</item>
+        <item>@string/share</item>
+        <item>@string/about</item>
+    </array>
+    <array name="vendor_navigation">
+        <item>@string/requests</item>
+        <item>@string/history</item>
+        <item>@string/share</item>
+        <item>@string/about</item>
+    </array>
 </resources>
