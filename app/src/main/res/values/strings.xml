@@ -195,7 +195,8 @@
     <string name="mybusiness">My Business</string>
     <string name="add_employee">Add Employee</string>
     <string name="profile">Profile</string>
-    <string name="switch_customer">Switch to customer</string>>
+    <string name="switch_customer">Switch to customer</string>
+    <string name="search">Search</string>>
     <array name="about">
         <item>Like us on Facebook</item>
         <item>Rate us on Google Play</item>

@@ -1,11 +1,15 @@
 package com.seraphicinfosolutions.myaura.Customer;
 
 
+import android.app.SearchManager;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -118,6 +122,35 @@ public class HomeActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.home, menu);
+
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+
+            final SearchView searchView = (SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.action_search));
+            SearchManager searchManager = (SearchManager) getSystemService(SEARCH_SERVICE);
+            searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+
+//            search.setSearchableInfo(manager.getSearchableInfo(getComponentName()));
+//
+//            search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//
+//                @Override
+//                public boolean onQueryTextSubmit(String query) {
+//                    return false;
+//                }
+//
+//                @Override
+//                public boolean onQueryTextChange(String query) {
+//
+////                    loadHistory(query);
+//
+//                    return true;
+//
+//                }
+//
+//            });
+
+        }
         return true;
     }
 

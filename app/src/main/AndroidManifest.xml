@@ -80,6 +80,7 @@
             android:label="@string/mybusiness"
             android:parentActivityName=".Customer.HomeActivity"
             android:theme="@style/MyActivityTheme">
+
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Customer.HomeActivity" />

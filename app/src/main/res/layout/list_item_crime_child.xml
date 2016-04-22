@@ -58,19 +58,34 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-
+            android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="10dp">
 
-            <TextView
+            <LinearLayout
+                android:id="@+id/ll_select"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="@string/select"
-                android:textAllCaps="true"
-                android:textAppearance="?android:textAppearanceMedium"
-                android:textColor="@android:color/holo_red_dark" />
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/img_selected"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/unchk" />
+
+                <TextView
+                    android:id="@+id/tv_selected"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/select"
+                    android:textAllCaps="true"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@color/text_color" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_showless"
@@ -83,13 +98,15 @@
                 android:textColor="@color/text_color" />
 
         </LinearLayout>
+
         <Button
             android:id="@+id/btn_request"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
             android:text="@string/request_quotoe"
-            android:textColor="@android:color/white"
-            android:background="@color/colorPrimary"></Button>
+            android:visibility="gone"
+            android:textColor="@android:color/white"></Button>
     </LinearLayout>
 
 </android.support.v7.widget.CardView>

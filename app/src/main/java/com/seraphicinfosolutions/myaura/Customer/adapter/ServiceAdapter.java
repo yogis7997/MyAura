@@ -2,6 +2,8 @@ package com.seraphicinfosolutions.myaura.Customer.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.support.annotation.IntegerRes;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +18,8 @@ import com.seraphicinfosolutions.myaura.Customer.holder.ServiceChildViewHolder;
 import com.seraphicinfosolutions.myaura.Customer.holder.ServiceParentViewHolder;
 import com.seraphicinfosolutions.myaura.R;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -23,11 +27,15 @@ public class ServiceAdapter extends ExpandableRecyclerAdapter<ServiceParentViewH
     private LayoutInflater mInflater;
     private Context context;
     int arr[];
+    private int count;
+    //    public ArrayList<HashMap<Integer, Integer>> arrayList;
+    public ArrayList<Integer> arrayList;
 
     public ServiceAdapter(Context context, List<ParentListItem> parentItemList) {
         super(parentItemList);
         mInflater = LayoutInflater.from(context);
         this.context = context;
+        arrayList = new ArrayList<>();
     }
 
     @Override
@@ -49,11 +57,11 @@ public class ServiceAdapter extends ExpandableRecyclerAdapter<ServiceParentViewH
 
 
     @Override
-    public void onBindChildViewHolder(ServiceChildViewHolder serviceChildViewHolder, final int i, Object o) {
+    public void onBindChildViewHolder(final ServiceChildViewHolder serviceChildViewHolder, final int position, Object o) {
         serviceChildViewHolder.tv_showless.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ServiceFragment.update(i - 1);
+                ServiceFragment.update(position - 1);
             }
         });
 
@@ -68,5 +76,32 @@ public class ServiceAdapter extends ExpandableRecyclerAdapter<ServiceParentViewH
                 context.startActivity(intent);
             }
         });
+
+
+
+        serviceChildViewHolder.ll_select.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (arrayList.size() > 0) {
+                    for (Integer i : arrayList) {
+                        if (i == position) {
+                            arrayList.remove(i);
+                        } else {
+                            arrayList.add(position);
+                        }
+                    }
+                } else {
+                    arrayList.add(position);
+                }
+
+                serviceChildViewHolder.tv_selected.setText(context.getResources().getString(R.string.select) + "(" + count + "/3)");
+                serviceChildViewHolder.tv_selected.setTextColor(Color.RED);
+                serviceChildViewHolder.img_selected.setImageResource(R.drawable.chk);
+                notifyDataSetChanged();
+                ServiceFragment.showButton();
+            }
+        });
+
+
     }
 }

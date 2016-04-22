@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.bignerdranch.expandablerecyclerview.Model.ParentListItem;
 import com.seraphicinfosolutions.myaura.Customer.adapter.ServiceAdapter;
@@ -24,6 +25,7 @@ public class ServiceFragment extends android.support.v4.app.Fragment {
     private View view;
     private Bundle savedInStanceState;
     private static ServiceAdapter crimeExpandableAdapter;
+    private static Button btn_request;
 
     @Nullable
     @Override
@@ -38,8 +40,9 @@ public class ServiceFragment extends android.support.v4.app.Fragment {
         recyclerView_service = (RecyclerView) view.findViewById(R.id.crime_recycler_view);
         recyclerView_service = (RecyclerView) view.findViewById(R.id.crime_recycler_view);
         recyclerView_service.setLayoutManager(new LinearLayoutManager(getActivity()));
+        btn_request = (Button) view.findViewById(R.id.btn_request);
 
-         crimeExpandableAdapter = new ServiceAdapter(getActivity(), generateCrimes());
+        crimeExpandableAdapter = new ServiceAdapter(getActivity(), generateCrimes());
         crimeExpandableAdapter.onRestoreInstanceState(savedInStanceState);
 
         recyclerView_service.setAdapter(crimeExpandableAdapter);
@@ -73,5 +76,9 @@ public class ServiceFragment extends android.support.v4.app.Fragment {
         crimeExpandableAdapter.collapseParent(pos);
         crimeExpandableAdapter.notifyItemChanged(pos);
 
+    }
+
+    public static void showButton() {
+        btn_request.setVisibility(View.VISIBLE);
     }
 }
